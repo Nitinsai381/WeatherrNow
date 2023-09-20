@@ -7,12 +7,14 @@ import axios from "axios"
 // const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
-const port =3000
+const port = process.env.port || 3000
 const app= express()
 const api_URL ="http://api.weatherapi.com/v1"
 const api_key = "9cd97607bdb541388ab133855231809"
 let location = ""
 let type = "forecast.json"
+
+app.set("view engine","ejs")
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -76,3 +78,5 @@ location = req.body.q
 app.listen(port,()=>{
     console.log(`Listening at port ${port}`)
 })
+
+// module.exports=app;
