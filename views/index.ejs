@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>WeatherNow</title>
+</head>
+<% const today = new Date()
+let  month= ["January","February","March","April","May","June","July",
+    "August","September","October","November","December"];
+const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear();
+
+%>
+<% if(locals.content){ %>
+<body onload="startTime()" style="background-image: url('https://source.unsplash.com/1600x900/? <%=  name  %>')">
+  
+
+
+  <!-- NavBar -->
+ 
+  <nav class="navbar nav">
+    <div class="container-fluid">
+      <!-- <h2 class="navbarName">Weather</h2> -->
+      <img class="logo" src="images/sun.png" alt="">
+      <div class="row nav-row">
+      <div class="col loc1">
+      <h3 class="city-name"> <%= name %>, <%= country %> </h3>
+      <p>Local : <%=local_time%></p>
+    </div>
+
+    <div class="col">
+    <form class="d-flex searchBar" method="POST">
+      <input class="form-control me-2" type="text" placeholder="Search Location" name="q" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+      <!-- <button class="btn btn-outline-success" type="submit" name="astronomy" value="astronomy.json">Check Astronomy</button> -->
+    </form>
+  </div>
+      <div class="col nav-col-dt">
+      <p id="txt"><%# startTime()%> (IST)</p>
+      <p class="localTime"> <%= date%></p>
+    </div>
+  </div>
+
+     
+    </div>
+  </nav>
+
+
+
+  <div class="row exterior">
+    <h2>Today's Weather</h2>
+          <!-- Temperature and Rises -->
+          
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card box-outer-temp">
+                <h2>Temperature</h2>
+                <div class="row">
+            <div class="col1">
+              <div class="card box-inner-temp">
+                <div class="card-body">
+                  <h5 class="title">Current</h5>
+                  <p class="card-text"><%= temp_celsius %> C</p> 
+                  <img src="images/temperature.png" alt=""/>         
+                </div>
+              </div>
+              </div>
+            
+          
+        
+            <div class="col1">
+              <div class="card box-inner-temp">
+                <div class="card-body">
+                  <h5 class="title">Feels like</h5>
+                  <p class="card-text"><%= feel_celsius %> C</p>
+                  <img src="images/temperature.png" alt=""/>          
+                </div>
+              </div>
+            </div>
+        
+            <div class="col1">
+              <div class="card box-inner-temp">
+                <div class="card-body">
+                  <h5 class="title">Maximum</h5>
+                  <p class="card-text"><%= max_temp_c %> C</p> 
+                  <img src="images/high-temperature.png" alt=""/>         
+                </div>
+              </div>
+            </div>
+        
+            <div class=" col1">
+              <div class="card box-inner-temp">
+                <div class="card-body">
+                  <h5 class="title">Minimum</h5>
+                  <p class="card-text"><%= min_temp_c %> C</p>
+                  <img src="images/low-temperature.png" alt=""/>          
+                </div>
+              </div>
+            </div>
+        
+            <div class=" col1">
+              <div class="card box-inner-temp">
+                <div class="card-body">
+                  <h5 class="title">Average</h5>
+                  <p class="card-text"><%= avg_temp_c %> C</p>
+                  <img src="images/avg-temperature.png" alt=""/>          
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+        </div>
+            
+        
+        
+          <div class="col-lg-5">
+          <div class="card box-outer-astro">
+            <h2>Astrology</h2>
+            <div class="row">
+          <div class="col-sm-3">
+            <div class="card box-inner">
+              <div class="card-body">
+                <h5 class="title">Sunrise </h5>
+                <p class="card-text"> <%= sunrise %> </p> 
+                <img src="images/sunrise.png" alt=""/>         
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-sm-3">
+            <div class="card box-inner">
+              <div class="card-body">
+                <h5 class="title">Sunset </h5>
+                <p class="card-text"> <%= sunset %> </p>
+                <img src="images/sunset.png" alt=""/>          
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="col-sm-3">
+            <div class="card box-inner">
+              <div class="card-body">
+                <h5 class="title">Moonrise </h5>
+                <p class="card-text"> <%= moonrise %> </p>
+                <img src="images/moonrise.png" alt=""/>          
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-sm-3">
+            <div class="card box-inner">
+              <div class="card-body">
+                <h5 class="title"> Moonset </h5>
+                <p class="card-text"> <%= moonset %> </p>
+                <img src="images/moonset.png" alt=""/>          
+              </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+         <!-- End Temperature and Rises -->
+
+<!-- Forecast -->
+<div class="row">
+    <div class="col-lg-12">
+     
+     
+      <div class="card box-outer-forecast">
+        <h2>Forecast</h2>
+        <div class="row">
+    <div class="col">
+      <div class="card box">
+        <div class="card-body">
+          <h5 class="title">Condition</h5>
+          <% let linkIcon= "https:"+icon %>
+          <p class="card-text condition"><%= condition %> </p>    
+          <img style="width: 4rem; height: 4rem;" src=<%= linkIcon %> alt=""/>      
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card box">
+        <div class="card-body">
+          <h5 class="title"> Clouds </h5>
+          <p class="card-text"> <%= clouds %> %</p>   
+          <img src="images/clouds.png" alt=""/>      
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card box">
+        <div class="card-body">
+          <h5 class="title"> Precipitation </h5>
+          <p class="card-text"> <%= precipitation %> % </p>       
+          <img src="images/precipitation.png" alt=""/>  
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card box">
+        <div class="card-body">
+          <h5 class="title"> Chances of Rain </h5>
+          <p class="card-text"> <%= day_rain %> %</p>       
+          <img src="images/heavy-rain.png" alt=""/>  
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card box">
+        <div class="card-body">
+          <h5 class="title"> Humidity </h5>
+          <p class="card-text"> <%= humidity %> %</p>   
+          <img src="images/humidity.png" alt=""/>      
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+    <div class="card box">
+      <div class="card-body">
+        <h5 class="title">Wind Speed (Kmph) </h5>
+        <p class="card-text"> <%= wind_kph %> </p> 
+        <img src="images/wind.png" alt=""/>        
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <div class="col">
+    <div class="card box">
+      <div class="card-body">
+        <h5 class="title"> Wind Direction </h5>
+        <p class="card-text"> <%= wind_dir %> </p> 
+        <img src="images/windsock.png" alt=""/>        
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card box">
+      <div class="card-body">
+        <h5 class="title">UV </h5>
+        <p class="card-text"> <%= uv %> </p>
+        <img src="images/uv.png" alt=""/>          
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      </div>
+    </div>
+      <!-- End Forecast -->
+
+
+
+
+
+  </div>
+
+
+
+     
+      <!-- <form class="d-flex searchBar" method="GET"> -->
+        <!-- <input class="form-control me-2" type="text" placeholder="Search" name="q" aria-label="Search"> -->
+          <!-- <button class="btn btn-outline-success" type="submit">Search another location?</button> -->
+          
+        <!-- </form> -->
+      <%}else{%>
+       
+  
+       <% const localTime = new Date()
+       const timeIST = localTime.getHours()+" : "+today.getMinutes()%>
+      
+  <nav class="navbar nav">
+    <div class="container-fluid">
+      <!-- <h2 class="navbarName">Weather</h2> -->
+<img class="logo" src="images/sun.png" alt="">
+      <div class="row nav-row">
+      <div class="col loc1">
+      <h3 class="logo-name"> WeatherNow </h3>
+      
+    </div>
+
+    <div class="col">
+    <form class="d-flex searchBar" method="POST">
+      <input class="form-control me-2" type="text" placeholder="Search Location" name="q" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+      <!-- <button class="btn btn-outline-success" type="submit" name="astronomy" value="astronomy.json">Check Astronomy</button> -->
+    </form>
+  </div>
+      <div class="col nav-col-dt">
+      <p id="txt"><%= timeIST %> (IST)</p>
+      <p class="localTime"> <%= date%></p>
+    </div>
+  </div>
+
+     
+    </div>
+  </nav>
+
+      <body style="background-image: url('https://source.unsplash.com/1600x900/?weather'); display: flex;
+      
+      justify-content: center;
+      align-items: center; margin-top: 10rem;" >
+      
+<div class="card-main">
+  <h1 ><img src="images/cloud.png" alt=""/>  WeatherNow  <img src="images/cloud.png" alt=""/></h1>
+ <p>🌕 
+  I'm Nitin Sai, a dedicated developer with a keen interest in meteorology.</p>
+  <p>🌕 WeatherNow fetches real-time weather data from trusted sources, ensuring accuracy and reliability.</p>
+ <p>🌕 Stay in touch with real-time weather updates, including temperature, humidity, wind speed, and more, all at your fingertips.</p>
+ 
+ <p>🌕 We believe that weather information should be both functional and aesthetically pleasing.</p>
+ <p>🌕 WeatherWise boasts a beautifully designed interface that makes checking the weather a delightful experience.</p>
+ <p>🌕 Know when the sun will rise and set in your area, perfect for photographers and outdoor enthusiasts.
+</p>
+
+</div>
+
+      </body>
+        
+    <%} %>
+
+    <script>
+      function startTime() {
+        const today = new Date();
+        
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s+" (IST)";
+        setTimeout(startTime, 1000);
+      }
+      
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+      }
+      </script>
+
+</body>
+</html>
