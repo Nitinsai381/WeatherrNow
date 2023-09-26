@@ -5,18 +5,7 @@ body {
     justify-content: center;
     text-align: center;
 }
-.exterior{ 
-    width:99.8%;
-    height: 100%;
-    background: rgba( 0, 0, 0, 0.30 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 1.5px );
-    margin-top: 8rem;
-    padding-top: 1rem;
-    /* padding-bottom: 2rem; */
-    /* margin-bottom: 2rem; */
-    margin-left: 0.1rem;
-}
+
 .nav{
     background: rgba( 0, 0, 0, 0.30 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -27,16 +16,41 @@ body {
     color: aliceblue;
     z-index: 1; 
 }
-
+@media (max-width: 767px){
+   .nav{
+    width: 390px;
+   }
+}
 .logo{
 
     width: 5rem;
     height: 5rem;
     margin-left: 0.5rem;
 }
-.logo-name{
-    margin-top: 1.25rem;
-    width: fit-content;
+@media (min-width: 767px){
+.brand-responsive{
+    display: none;
+    width: max-content;
+    text-align: left;
+    /* margin-right: 4rem; */
+    left: 20%;
+}
+
+}
+@media (max-width: 767px){
+    .logo{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+.searchBar {
+    margin: 2rem;
+    width: 28rem;
+}
+@media (max-width: 767px){
+    .searchBar{
+        width: 19rem;
+    }
 }
 .nav-row{
     text-align: center;
@@ -47,7 +61,12 @@ body {
     width: fit-content;
     margin-top: 1rem;
 }
-
+@media (max-width: 767px){
+.nav-col-dt{
+    margin-top: 0;
+    margin-left: 1rem;
+}
+}
 .nav-col-dt p{
     width: fit-content;
 }
@@ -55,10 +74,39 @@ body {
     margin-top: 0.5rem;
     width: 40rem;
 }
+@media (max-width: 767px){
+    .loc1{
+        margin-top: 1rem;
+        width: 20rem;
+    }
+    .city-name{
+        font-size: 2rem;
+        left: 2rem;
+        width: 15rem;
+    }
+}
 .city-name{
     color: rgb(255, 255, 255);
     left: 8rem;
     width: 35rem;
+}
+@media (max-width: 767px){
+    h3{
+        width: fit-content;
+        text-align: left;
+    }
+    .city-name{
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+    .city-time{
+        text-align: left;
+        margin-left: 1rem;
+    }
+    .localTime{
+    text-align: left;
+        font-size: 1.2rem;
+    }
 }
 .nav-col-loc{
     margin-top: 1.5rem;
@@ -83,15 +131,31 @@ h2 .navbarName{
     font-size: 4rem;
     color: azure;
     text-align: center;
-    
+}   
 
-}
 h5{
     font-size: 1rem;
     font-weight: 600;
     color: rgb(255, 255, 255);
 }
-
+.exterior{ 
+    width:99.8%;
+    height: 100%;
+    background: rgba( 0, 0, 0, 0.30 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    margin-top: 8rem;
+    padding-top: 1rem;
+    /* padding-bottom: 2rem; */
+    /* margin-bottom: 2rem; */
+    margin-left: 0.1rem;
+}
+@media (max-width: 767px){
+   .exterior{
+     margin-top: 22rem;
+     margin-bottom: 1rem;
+   }
+}
 .box {
     background: rgba( 0, 0, 0, 0.30 );
     box-shadow: 2px 2px 2px 2px rgba(249, 249, 250, 0.183);
@@ -120,6 +184,18 @@ h5{
     width: 92rem;
     height:16rem;
 }
+@media (max-width: 767px){
+.box-outer-forecast{
+    width: 20.5rem;
+    height: 56rem;
+    padding-left: 0.6rem;
+    padding-right: 3.2rem;
+}
+.col-forecast{
+    width: 9rem;
+}
+}
+
 .condition{
     font-size: 1rem;
 }
@@ -145,6 +221,11 @@ h5{
     height:fit-content;
     padding-bottom: 2rem;
 }
+@media (max-width: 767px){
+   .box-outer-temp{
+    width: 20.5rem;
+   }
+}
 .box-outer-astro{
     background: rgba( 0, 0, 0, 0.30 );
     box-shadow: 2px 2px 2px 2px rgba(249, 249, 250, 0.183);
@@ -158,6 +239,15 @@ h5{
     padding-right: 2rem;
     height:fit-content;
 }
+@media (max-width: 767px){
+    .box-outer-astro{
+        margin-left: 1.2rem;
+        width: 20.5rem;
+        padding-right: 1rem;
+        padding-left: 0.6rem;
+    }
+
+}
 .box-inner{
     background: rgba( 0, 0, 0, 0.30 );
     box-shadow: 2px 2px 2px 2px rgba(249, 249, 250, 0.183);
@@ -166,6 +256,11 @@ h5{
     margin-left: 1.2rem;
     width: 8rem;
     height:10rem;
+}
+@media (max-width: 767px){
+    .col-astro{
+        width: 9rem;
+    }
 }
 .box-inner:hover{
     transform: scale(1.15);
@@ -184,8 +279,18 @@ img{
     width: 8rem;
     height:10rem;
 }
+@media (max-width: 767px){
+    .box-inner-temp{
+        width: 8;
+    }
+}
 .col1{
     width: 10rem;
+}
+@media (max-width: 767px){
+    .col1{
+        width: 9rem;
+    }
 }
 .box-inner-temp:hover{
     transform: scale(1.15);
@@ -195,12 +300,31 @@ h4 {
     font-size: 2rem;
     
 }
+.navHome{
+    background: rgba( 0, 0, 0, 0.30 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 22.5px );
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    color: aliceblue;
+    z-index: 1; 
+}
+.logoHome{
 
-.searchBar {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 0.5rem;
+}
+.searchBarHome {
     margin: 2rem;
-    width: 28rem;
+    /* width: 68rem; */
 }
 
+b{
+    font-size: 2rem;
+    color: aliceblue;
+}
 p {
     font-size: 1.2rem;
     font-weight: 800;

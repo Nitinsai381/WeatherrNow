@@ -25,17 +25,19 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
   <nav class="navbar nav">
     <div class="container-fluid">
       <!-- <h2 class="navbarName">Weather</h2> -->
-      <img class="logo" src="images/sun.png" alt="">
+      <img class="logo" src="images/sun.png" alt=""><b class="brand-responsive">WeatherNow</b><b>       </b><b>      </b>
       <div class="row nav-row">
       <div class="col loc1">
       <h3 class="city-name"> <%= name %>, <%= country %> </h3>
-      <p>Local : <%=local_time%></p>
+      <p class="city-time">Local : <%=local_time%></p>
     </div>
 
     <div class="col">
     <form class="d-flex searchBar" method="POST">
       <input class="form-control me-2" type="text" placeholder="Search Location" name="q" aria-label="Search">
-      <button class="btn btn-primary" type="submit">Search</button>
+      <button class="btn btn-primary"  type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg></button>
       <!-- <button class="btn btn-outline-success" type="submit" name="astronomy" value="astronomy.json">Check Astronomy</button> -->
     </form>
   </div>
@@ -122,7 +124,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
           <div class="card box-outer-astro">
             <h2>Astrology</h2>
             <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-3 col-astro">
             <div class="card box-inner">
               <div class="card-body">
                 <h5 class="title">Sunrise </h5>
@@ -132,7 +134,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
             </div>
           </div>
         
-          <div class="col-sm-3">
+          <div class="col-sm-3 col-astro">
             <div class="card box-inner">
               <div class="card-body">
                 <h5 class="title">Sunset </h5>
@@ -144,7 +146,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
         
         
         
-          <div class="col-sm-3">
+          <div class="col-sm-3 col-astro">
             <div class="card box-inner">
               <div class="card-body">
                 <h5 class="title">Moonrise </h5>
@@ -154,7 +156,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
             </div>
           </div>
         
-          <div class="col-sm-3">
+          <div class="col-sm-3 col-astro">
             <div class="card box-inner">
               <div class="card-body">
                 <h5 class="title"> Moonset </h5>
@@ -177,7 +179,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       <div class="card box-outer-forecast">
         <h2>Forecast</h2>
         <div class="row">
-    <div class="col">
+    <div class="col col-forecast">
       <div class="card box">
         <div class="card-body">
           <h5 class="title">Condition</h5>
@@ -188,7 +190,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       </div>
     </div>
 
-    <div class="col">
+    <div class="col col-forecast">
       <div class="card box">
         <div class="card-body">
           <h5 class="title"> Clouds </h5>
@@ -198,7 +200,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       </div>
     </div>
 
-    <div class="col">
+    <div class="col col-forecast">
       <div class="card box">
         <div class="card-body">
           <h5 class="title"> Precipitation </h5>
@@ -208,7 +210,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       </div>
     </div>
 
-    <div class="col">
+    <div class="col col-forecast">
       <div class="card box">
         <div class="card-body">
           <h5 class="title"> Chances of Rain </h5>
@@ -218,7 +220,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       </div>
     </div>
 
-    <div class="col">
+    <div class="col col-forecast">
       <div class="card box">
         <div class="card-body">
           <h5 class="title"> Humidity </h5>
@@ -228,7 +230,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       </div>
     </div>
 
-    <div class="col">
+    <div class="col col-forecast">
     <div class="card box">
       <div class="card-body">
         <h5 class="title">Wind Speed (Kmph) </h5>
@@ -240,7 +242,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
 
  
 
-  <div class="col">
+  <div class="col col-forecast">
     <div class="card box">
       <div class="card-body">
         <h5 class="title"> Wind Direction </h5>
@@ -250,7 +252,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
     </div>
   </div>
 
-  <div class="col">
+  <div class="col col-forecast">
     <div class="card box">
       <div class="card-body">
         <h5 class="title">UV </h5>
@@ -284,10 +286,12 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
   
        <% const localTime = new Date()
        const timeIST = localTime.getHours()+" : "+today.getMinutes()%>
-      
-  <nav class="navbar nav">
+
+      <!-- Navbar -->
+
+  <!-- <nav class="navbar nav">
     <div class="container-fluid">
-      <!-- <h2 class="navbarName">Weather</h2> -->
+    
 <img class="logo" src="images/sun.png" alt="">
       <div class="row nav-row">
       <div class="col loc1">
@@ -299,18 +303,28 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
     <form class="d-flex searchBar" method="POST">
       <input class="form-control me-2" type="text" placeholder="Search Location" name="q" aria-label="Search">
       <button class="btn btn-primary" type="submit">Search</button>
-      <!-- <button class="btn btn-outline-success" type="submit" name="astronomy" value="astronomy.json">Check Astronomy</button> -->
+      
     </form>
   </div>
       <div class="col nav-col-dt">
       <p id="txt"></p>
-      <p class="localTime"> <%= date%></p>
+      <p class="localTime"> <#= date%></p>
     </div>
   </div>
 
-     
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-light navHome">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="images/sun.png" class="logoHome" alt=""  class="d-inline-block ">
+       <b > WeatherNow</b>
+      </a>
     </div>
   </nav>
+
+  <!-- Navbar ends -->
 
       <body style="background-image: url('https://source.unsplash.com/1600x900/?weather'); display: flex;
       
@@ -319,7 +333,17 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
       
 <div class="card-main">
   <h1 ><img src="images/cloud.png" alt=""/>  WeatherNow  <img src="images/cloud.png" alt=""/></h1>
- <p>🌕 
+
+
+  <form class="d-flex  searchBarHome" method="POST">
+
+    <!-- <h6 >Search any location here </h6></div> -->
+  <input class="form-control me-2 searchLoc" placeholder="Search Location" name="q" aria-label="Search"><button class="btn btn-primary" type="submit">Search</button>
+
+  </form>
+
+
+  <p>🌕 
   I'm Nitin Sai, a dedicated developer with a keen interest in meteorology.</p>
   <p>🌕 WeatherNow fetches real-time weather data from trusted sources, ensuring accuracy and reliability.</p>
  <p>🌕 Stay in touch with real-time weather updates, including temperature, humidity, wind speed, and more, all at your fingertips.</p>
