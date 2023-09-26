@@ -170,9 +170,11 @@ h5{
     margin-top: 0.5rem;
     /* background-color: aquamarine; */
 }
+@media (min-width: 767px){
 .box:hover{
     transform: scale(1.15);
     box-shadow: 5px white;
+}
 }
 .box-outer-forecast{
     display: grid;
@@ -266,8 +268,10 @@ h5{
         width: 9rem;
     }
 }
+@media (min-width: 767px){
 .box-inner:hover{
     transform: scale(1.15);
+}
 }
 img{
     height: 3rem;
@@ -296,8 +300,10 @@ img{
         width: 9rem;
     }
 }
+@media (min-width: 767px){
 .box-inner-temp:hover{
     transform: scale(1.15);
+}
 }
 h4 {
     color: rgb(245, 246, 246);
