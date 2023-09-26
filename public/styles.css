@@ -191,7 +191,7 @@ h5{
     width: 20.5rem;
     height: 56rem;
     margin-left: 0.6rem;
-    padding-left: 0.6rem;
+    padding-left: 0.4rem;
     padding-right: 3.2rem;
 }
 .col-forecast{
@@ -226,7 +226,7 @@ h5{
 }
 @media (max-width: 767px){
    .box-outer-temp{
-    margin-left: 0.6rem;
+    margin-left: 0.4rem;
     width: 20.5rem;
    }
 }
@@ -245,7 +245,7 @@ h5{
 }
 @media (max-width: 767px){
     .box-outer-astro{
-        margin-left: 0.6rem;
+        margin-left: 0.4rem;
         width: 20.5rem;
         padding-right: 1rem;
         padding-left: 0.6rem;
