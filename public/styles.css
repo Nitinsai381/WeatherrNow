@@ -9,16 +9,20 @@ body {
 .nav{
     background: rgba( 0, 0, 0, 0.30 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 22.5px );
-    position: fixed;
-    top: 0%;
+    backdrop-filter: blur( 22.5px );  
     width: 100%;
     color: aliceblue;
     z-index: 1; 
 }
+@media (min-width: 767px){
+   .nav{ position: fixed;
+    top: 0%;
+}
+}
 @media (max-width: 767px){
    .nav{
     width: 375px;
+
    }
 }
 .logo{
@@ -153,8 +157,8 @@ h5{
 }
 @media (max-width: 767px){
    .exterior{
-     margin-top: 22rem;
-     /* margin-bottom: 1rem; */
+     margin-top: 0.4rem;
+     margin-bottom: 0.4rem;
      padding-bottom: 1rem;
    }
 }
