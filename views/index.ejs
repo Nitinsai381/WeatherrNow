@@ -62,11 +62,11 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
               <div class="card box-outer-temp">
                 <h2>Temperature</h2>
                 <div class="row">
-            <div class="col1">
-              <div class="card box-inner-temp">
+            <div class="col1 current-temp">
+              <div class="card box-inner-temp current-temp-inner">
                 <div class="card-body">
                   <h5 class="title">Current</h5>
-                  <p class="card-text"><%= temp_celsius %> C</p> 
+                  <p class="card-text"><%= temp_celsius %> °C</p> 
                   <img src="images/temperature.png" alt=""/>         
                 </div>
               </div>
@@ -78,7 +78,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
               <div class="card box-inner-temp">
                 <div class="card-body">
                   <h5 class="title">Feels like</h5>
-                  <p class="card-text"><%= feel_celsius %> C</p>
+                  <p class="card-text"><%= feel_celsius %> °C</p>
                   <img src="images/temperature.png" alt=""/>          
                 </div>
               </div>
@@ -88,7 +88,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
               <div class="card box-inner-temp">
                 <div class="card-body">
                   <h5 class="title">Maximum</h5>
-                  <p class="card-text"><%= max_temp_c %> C</p> 
+                  <p class="card-text"><%= max_temp_c %> °C</p> 
                   <img src="images/high-temperature.png" alt=""/>         
                 </div>
               </div>
@@ -98,7 +98,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
               <div class="card box-inner-temp">
                 <div class="card-body">
                   <h5 class="title">Minimum</h5>
-                  <p class="card-text"><%= min_temp_c %> C</p>
+                  <p class="card-text"><%= min_temp_c %> °C</p>
                   <img src="images/low-temperature.png" alt=""/>          
                 </div>
               </div>
@@ -108,7 +108,7 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
               <div class="card box-inner-temp">
                 <div class="card-body">
                   <h5 class="title">Average</h5>
-                  <p class="card-text"><%= avg_temp_c %> C</p>
+                  <p class="card-text"><%= avg_temp_c %> °C</p>
                   <img src="images/avg-temperature.png" alt=""/>          
                 </div>
               </div>
@@ -273,47 +273,11 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
 
   </div>
 
-
-
-     
-      <!-- <form class="d-flex searchBar" method="GET"> -->
-        <!-- <input class="form-control me-2" type="text" placeholder="Search" name="q" aria-label="Search"> -->
-          <!-- <button class="btn btn-outline-success" type="submit">Search another location?</button> -->
-          
-        <!-- </form> -->
       <%}else{%>
        
   
        <% const localTime = new Date()
        const timeIST = localTime.getHours()+" : "+today.getMinutes()%>
-
-      <!-- Navbar -->
-
-  <!-- <nav class="navbar nav">
-    <div class="container-fluid">
-    
-<img class="logo" src="images/sun.png" alt="">
-      <div class="row nav-row">
-      <div class="col loc1">
-      <h3 class="logo-name"> WeatherNow </h3>
-      
-    </div>
-
-    <div class="col">
-    <form class="d-flex searchBar" method="POST">
-      <input class="form-control me-2" type="text" placeholder="Search Location" name="q" aria-label="Search">
-      <button class="btn btn-primary" type="submit">Search</button>
-      
-    </form>
-  </div>
-      <div class="col nav-col-dt">
-      <p id="txt"></p>
-      <p class="localTime"> <#= date%></p>
-    </div>
-  </div>
-
-    </div>
-  </nav> -->
 
   <nav class="navbar navbar-light navHome">
     <div class="container-fluid">

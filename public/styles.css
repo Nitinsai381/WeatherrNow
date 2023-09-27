@@ -295,6 +295,16 @@ img{
     .box-inner-temp{
         width: 8;
     }
+    .current-temp-inner{
+        width: 17rem;
+        height: 14rem;
+    }
+    .current-temp-inner p{
+        font-size: 3rem;
+    }
+    .current-temp-inner h5{
+        font-size: 2rem;
+    }
 }
 .col1{
     width: 10rem;
@@ -302,6 +312,9 @@ img{
 @media (max-width: 767px){
     .col1{
         width: 9rem;
+    }
+    .current-temp{
+        width: 18rem;
     }
 }
 @media (min-width: 767px){
