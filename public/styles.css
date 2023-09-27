@@ -205,6 +205,9 @@ h5{
     padding-left: 0.4rem;
     padding-right: 3.2rem;
 }
+.box-outer-forecast h2{
+margin-left: 2.2rem;
+}
 .col-forecast{
     width: 9rem;
 }

@@ -16,7 +16,22 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
 
 %>
 <% if(locals.content){ %>
-<body onload="startTime()" style="background-image: url('https://source.unsplash.com/1600x900/? <%=  name  %>')">
+  <style>
+     @media (max-width: 766px){
+     body{
+      background-color: rgb(0, 160, 160);
+}
+.exterior{
+  margin-top: 0;
+}
+}
+@media (min-width: 767px){
+    body{
+      background-image: url('https://source.unsplash.com/1600x900/? <%=  name  %>');
+    }
+}
+  </style>
+<body onload="startTime()" >
   
 
 
@@ -290,11 +305,22 @@ const date = today.getDate()+"-"+month[today.getMonth()]+"-"+today.getFullYear()
 
   <!-- Navbar ends -->
 
-      <body style="background-image: url('https://source.unsplash.com/1600x900/?weather'); display: flex;
+      <body style=" display: flex;
       
       justify-content: center;
       align-items: center; margin-top: 10rem;" >
-      
+      <style>
+        @media (min-width: 767px){
+body{
+  background-image: url('https://source.unsplash.com/1600x900/?weather');
+}
+        }
+        @media (max-width: 766px){
+          body{
+background-color: rgb(0, 180, 177) ;
+        }
+      }
+      </style>
 <div class="card-main">
   <h1 ><img src="images/cloud.png" alt=""/>  WeatherNow  <img src="images/cloud.png" alt=""/></h1>
 
