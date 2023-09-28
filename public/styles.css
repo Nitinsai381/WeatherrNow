@@ -199,7 +199,7 @@ h5{
 }
 @media (max-width: 767px){
 .box-outer-forecast{
-    width: 20.5rem;
+    width: 100%;
     height: 56rem;
     margin-left: 0.6rem;
     padding-left: 0.4rem;
@@ -241,7 +241,7 @@ margin-left: 2.2rem;
 @media (max-width: 767px){
    .box-outer-temp{
     margin-left: 0.4rem;
-    width: 20.5rem;
+    width: 100%;
    }
 }
 .box-outer-astro{
@@ -260,7 +260,7 @@ margin-left: 2.2rem;
 @media (max-width: 767px){
     .box-outer-astro{
         margin-left: 0.4rem;
-        width: 20.5rem;
+        width: 100%;
         padding-right: 1rem;
         padding-left: 0.6rem;
     }
@@ -274,6 +274,16 @@ margin-left: 2.2rem;
     margin-left: 1.2rem;
     width: 8rem;
     height:10rem;
+}
+@media (min-width:386px) and (max-width: 403px){
+    .box-inner{
+        margin-left: 2rem;
+    }
+}
+@media (min-width:404px) and (max-width: 425px){
+    .box-inner{
+        margin-left: 2.5rem;
+    }
 }
 @media (max-width: 767px){
     .col-astro{
@@ -301,8 +311,10 @@ img{
 }
 @media (max-width: 767px){
     .box-inner-temp{
-        width: 8;
-    }
+        width: 8rem;
+        align-content: center;
+        justify-content: center;
+    }      
     .current-temp-inner{
         width: 17rem;
         height: 14rem;
@@ -312,6 +324,16 @@ img{
     }
     .current-temp-inner h5{
         font-size: 2rem;
+    }
+    @media (min-width:386px) and (max-width: 403px){
+        .box-inner-temp{
+            margin-left: 2.5rem;
+        }
+    }
+    @media (min-width:404px) and (max-width: 425px){
+        .box-inner-temp{
+            margin-left: 3rem;
+        }
     }
 }
 .col1{
